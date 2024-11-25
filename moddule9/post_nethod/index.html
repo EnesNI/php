@@ -7,23 +7,14 @@
     <title>Our PHP form</title>
 </head>
 <body>
-    <form action="index.php" method="GET">
+    <form action="add.php" method="post">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="Username"><br><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" placeholder="email"><br><br>
         <label for="password">Password</label>
         <input type="text" id="password" name="password" placeholder="password"><br><br>
         <input type="submit" value="submit">
     </form>
 </body>
 </html>
-
-
-
-
-<?php
-$username = $_GET['username'];
-$password = $_GET['password'];
-echo $username;
-echo "<br>";
-echo $password;
-?>
