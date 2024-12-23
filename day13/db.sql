@@ -28,3 +28,4 @@ VALUES ('admin', 'admin@example.com', MD5('password123'));
 INSERT INTO users (username, email, password) VALUES
 ('john_doe', 'john@example.com', MD5('john123')),
 ('jane_doe', 'jane@example.com', MD5('jane123'));
+('jane_doe', 'jane@example.com', MD5('jane123'));

@@ -1,24 +1,32 @@
 <?php
-    include_once("config.php");
-    session_start();
+require_once ("config.php");
+session_start();
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $username = $_POST['username'];
+    $password = md5($_POST['password']); //Hash password
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $username = $_POST['username'];
-        $password = md5($_POST['password']); //Hash the password
-
-        //Querry to check admin credentials
-    $sql = "SELECT * FROM admin WHERE username = '$username' AND password = '$password'"; 
-        $result = $conn->query($sql);
-
-        if($result->num_rows ==1){
-            $_SESSION['admin_logged_in'] = true;
-            header("Location: admin.php"); //Redirect to admin panel
-        }else{
-            $error = "Invalid Username or Password!";
-        }
-    
+    $sql = "SELECT * FROM admin WHERE username = '$username' AND password = '$password'";
+    $result = $conn->query($sql);
+    if($result->num_rows == 1){
+        $_SESSION['admin_logged_in'] = true;
+        header("Location: admin.php");
+        exit();
+    }else{
+        $error = "Invalid Username or Password!";
     }
+}
 ?>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
