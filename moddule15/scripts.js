@@ -14,6 +14,3 @@ function deleteProduct(id) {
 }
 
 
-function editProduct(id) {
-    window.location.href = 'edit.php?id=' + id;
-}
